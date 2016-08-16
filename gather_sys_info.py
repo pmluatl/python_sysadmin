@@ -3,16 +3,18 @@
 # only work for linux system
 import subprocess
 
+def os_func(func_name, func_arg):
+    print "gather system info by %s..." %func_name
+    subprocess.call([func_name, func_arg])
+
 #command 1
 uname = "uname"
 uname_arg = "-a"
-print "Gathering system information with %s command:\n" %uname
-subprocess.call([uname, uname_arg])
+os_func(uname, uname_arg)
 
 #command 2
 diskspace = "df"
 diskspace_arg = "-h"
-print "Gathering system information with %s command:\n" %diskspace
-subprocess.call([diskspace, diskspace_arg])
+os_func(diskspace, diskspace_arg)
 
 input("Press enter to confirm..")
