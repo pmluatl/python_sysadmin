@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
+
+function os_func()
+{
+   printf "Gathering system info with $1 command\n\n"
+   $1 $2 
+}
+
 UNAME="uname -a"
-printf "Gathering system info with $UNAME command\n\n"
-$UNAME
-
+os_func $UNAME
 DISKSPACE="df -h"
-printf "Gathering system info with $DISKSPACE command\n\n"
-$DISKSPACE
-
+os_func $DISKSPACE
 
